@@ -139,6 +139,8 @@ REST_FRAMEWORK = {
 }
 
 
+# API Credentials
+
 from decouple import config
 
 # Twitter API Credentials
@@ -154,4 +156,12 @@ REDDIT_CLIENT_ID = config('REDDIT_CLIENT_ID')
 REDDIT_CLIENT_SECRET = config('REDDIT_CLIENT_SECRET')
 REDDIT_USER_AGENT = config('REDDIT_USER_AGENT')
 
+# Facebook API Credentials
+
+FACEBOOK_ACCESS_TOKEN = config('FACEBOOK_ACCESS_TOKEN')
+
+# Instagram API Credentials
+
+INSTAGRAM_ACCESS_TOKEN = config('INSTAGRAM_ACCESS_TOKEN')
+INSTAGRAM_USER_ID = config('INSTAGRAM_USER_ID')
 
