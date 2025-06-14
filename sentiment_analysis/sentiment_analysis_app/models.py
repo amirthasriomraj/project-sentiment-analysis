@@ -204,7 +204,7 @@ class Posts(models.Model):
 
 
 class SentimentResults(models.Model):
-    post = models.ForeignKey(Posts, models.DO_NOTHING, blank=True, null=True)
+    post = models.ForeignKey(Posts, models.DO_NOTHING, related_name='sentiment', blank=True, null=True)
     sentiment_label = models.TextField(blank=True, null=True)
     sentiment_score = models.DecimalField(max_digits=5, decimal_places=4, blank=True, null=True)
     processed_at = models.DateTimeField(blank=True, null=True)

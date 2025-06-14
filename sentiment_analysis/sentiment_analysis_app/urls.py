@@ -12,6 +12,11 @@ router.register(r'brand-aggregates', views.BrandAggregateViewSet)
 router.register(r'brand-platform-aggregates', views.BrandPlatformAggregateViewSet)
 router.register(r'top-handles', views.TopHandleViewSet)
 
+
 urlpatterns = [
-    path('', include(router.urls)),
+    # Frontend homepage
+    path('', views.home, name='home'),
+
+    # API routes (mounted at /api/)
+    path('api/', include(router.urls)),
 ]

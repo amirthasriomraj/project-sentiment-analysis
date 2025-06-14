@@ -18,8 +18,13 @@ from django.shortcuts import redirect
 from django.contrib import admin
 from django.urls import path, include
 
+# urlpatterns = [
+#     path('', lambda request: redirect('/api/')),
+#     path('admin/', admin.site.urls),
+#     path('api/', include('sentiment_analysis_app.urls')),
+# ]
+
 urlpatterns = [
-    path('', lambda request: redirect('/api/')),
     path('admin/', admin.site.urls),
-    path('api/', include('sentiment_analysis_app.urls')),
+    path('', include('sentiment_analysis_app.urls')),  # This now handles both frontend and /api/
 ]

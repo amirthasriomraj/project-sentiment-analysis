@@ -1,10 +1,67 @@
 from django.shortcuts import render
 from rest_framework import viewsets
 from django_filters.rest_framework import DjangoFilterBackend # type: ignore
+from django.core.paginator import Paginator
+from django.db.models import Q
 
 from .models import *
 from .serializers import *
 from .filters import *
+
+
+def home(request):
+    query = request.GET.get('q', '')
+    brand = request.GET.get('brand')
+    platform = request.GET.get('platform')
+    from_date = request.GET.get('from')
+    to_date = request.GET.get('to')
+
+    posts = Posts.objects.select_related('brand', 'platform').all()
+
+    # Apply filters
+    if query:
+        posts = posts.filter(content__icontains=query)
+
+    if brand and brand != 'All':
+        posts = posts.filter(brand__name=brand)
+
+    if platform and platform != 'All':
+        posts = posts.filter(platform__name=platform)
+
+    if from_date:
+        posts = posts.filter(created_at__date__gte=from_date)
+    if to_date:
+        posts = posts.filter(created_at__date__lte=to_date)
+
+    posts = posts.order_by('-created_at')
+
+    paginator = Paginator(posts, 10)  # 10 posts per page
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    results = []
+    for post in page_obj:
+        sentiment = SentimentResults.objects.filter(post=post).first()
+        results.append({
+            'post': post,
+            'sentiment_label': sentiment.sentiment_label if sentiment else 'N/A',
+            'sentiment_score': sentiment.sentiment_score if sentiment else '-',
+        })
+
+    context = {
+        'results': results,
+        'page_obj': page_obj,
+        'brands': Brands.objects.values_list('name', flat=True).distinct(),
+        'platforms': Platforms.objects.values_list('name', flat=True).distinct(),
+        'query': query,
+        'selected_brand': brand,
+        'selected_platform': platform,
+        'from_date': from_date,
+        'to_date': to_date,
+    }
+
+    return render(request, 'home.html', context)
+
 
 class BrandViewSet(viewsets.ModelViewSet):
     queryset = Brands.objects.all()
@@ -53,3 +110,4 @@ class TopHandleViewSet(viewsets.ModelViewSet):
     serializer_class = TopHandleSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = TopHandleFilter
+
