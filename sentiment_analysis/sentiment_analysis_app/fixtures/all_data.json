@@ -1,0 +1,285 @@
+[
+  {
+    "model": "sentiment_analysis_app.brands",
+    "pk": 1,
+    "fields": {
+      "name": "Nike",
+      "created_at": "2025-05-21T12:10:00"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.brands",
+    "pk": 2,
+    "fields": {
+      "name": "Levis",
+      "created_at": "2025-05-21T19:38:00"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.brands",
+    "pk": 3,
+    "fields": {
+      "name": "Titan",
+      "created_at": "2025-05-22T15:03:00"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.platforms",
+    "pk": 1,
+    "fields": {
+      "name": "Twitter"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.platforms",
+    "pk": 2,
+    "fields": {
+      "name": "Instagram"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.platforms",
+    "pk": 3,
+    "fields": {
+      "name": "Facebook"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.platforms",
+    "pk": 4,
+    "fields": {
+      "name": "Reddit"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.platforms",
+    "pk": 5,
+    "fields": {
+      "name": "LinkedIn"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.platforms",
+    "pk": 7,
+    "fields": {
+      "name": "TikTok"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.posts",
+    "pk": 2,
+    "fields": {
+      "brand": 1,
+      "platform": 1,
+      "raw_text": "Nike is changing the game with its new AI shoes!",
+      "cleaned_text": "Nike is changing the game with its new AI shoes!",
+      "user_id": "user123",
+      "original_post_url": "https://twitter.com/user123/status/123456789",
+      "posted_at": "2025-05-21T10:05:39.473",
+      "language": "en",
+      "reach_estimate": 15000,
+      "created_at": null,
+      "like_count": 240,
+      "view_count": 5000,
+      "share_count": 70,
+      "comment_count": 30,
+      "followers_count": 8000,
+      "state": "California",
+      "country": "USA"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.posts",
+    "pk": 5,
+    "fields": {
+      "brand": 1,
+      "platform": 3,
+      "raw_text": "Nike is changing the game with its new AI shoes!",
+      "cleaned_text": "Nike is changing the game with its new AI shoes!",
+      "user_id": "user123",
+      "original_post_url": "https://facebook.com/user123/status/123456789",
+      "posted_at": "2025-05-21T14:01:55.517",
+      "language": "en",
+      "reach_estimate": 15000,
+      "created_at": null,
+      "like_count": 240,
+      "view_count": 5000,
+      "share_count": 70,
+      "comment_count": 30,
+      "followers_count": 8000,
+      "state": "California",
+      "country": "USA"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.posts",
+    "pk": 6,
+    "fields": {
+      "brand": 1,
+      "platform": 2,
+      "raw_text": "Nike is changing the game with its new AI shoes!",
+      "cleaned_text": "Nike is changing the game with its new AI shoes!",
+      "user_id": "user123",
+      "original_post_url": "https://instagram.com/user123/status/123456789",
+      "posted_at": "2025-05-21T14:03:34.268",
+      "language": "en",
+      "reach_estimate": 15000,
+      "created_at": null,
+      "like_count": 240,
+      "view_count": 5000,
+      "share_count": 70,
+      "comment_count": 30,
+      "followers_count": 8000,
+      "state": "California",
+      "country": "USA"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.posts",
+    "pk": 7,
+    "fields": {
+      "brand": 1,
+      "platform": 5,
+      "raw_text": "Nike is changing the game with its new AI shoes!",
+      "cleaned_text": "Nike is changing the game with its new AI shoes!",
+      "user_id": "user123",
+      "original_post_url": "https://linkedin.com/user123/status/123456789",
+      "posted_at": "2025-05-21T14:03:44.745",
+      "language": "en",
+      "reach_estimate": 15000,
+      "created_at": null,
+      "like_count": 240,
+      "view_count": 5000,
+      "share_count": 70,
+      "comment_count": 30,
+      "followers_count": 8000,
+      "state": "California",
+      "country": "USA"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.posts",
+    "pk": 8,
+    "fields": {
+      "brand": 1,
+      "platform": 4,
+      "raw_text": "Nike is changing the game with its new AI shoes!",
+      "cleaned_text": "Nike is changing the game with its new AI shoes!",
+      "user_id": "user123",
+      "original_post_url": "https://reddit.com/user123/status/123456789",
+      "posted_at": "2025-05-21T14:04:05.049",
+      "language": "en",
+      "reach_estimate": 15000,
+      "created_at": null,
+      "like_count": 240,
+      "view_count": 5000,
+      "share_count": 70,
+      "comment_count": 30,
+      "followers_count": 8000,
+      "state": "California",
+      "country": "USA"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.posts",
+    "pk": 9,
+    "fields": {
+      "brand": 1,
+      "platform": 7,
+      "raw_text": "Nike is changing the game with its new AI shoes!",
+      "cleaned_text": "Nike is changing the game with its new AI shoes!",
+      "user_id": "user123",
+      "original_post_url": "https://tiktok.com/user123/status/123456789",
+      "posted_at": "2025-05-21T14:04:16.203",
+      "language": "en",
+      "reach_estimate": 15000,
+      "created_at": null,
+      "like_count": 240,
+      "view_count": 5000,
+      "share_count": 70,
+      "comment_count": 30,
+      "followers_count": 8000,
+      "state": "California",
+      "country": "USA"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.posts",
+    "pk": 10,
+    "fields": {
+      "brand": 2,
+      "platform": 1,
+      "raw_text": "Delivery was a little slow, but the jeans are solid.",
+      "cleaned_text": "Delivery was a little slow, but the jeans are solid.",
+      "user_id": "user123",
+      "original_post_url": "https://twitter.com/user123/status/123456789",
+      "posted_at": "2025-06-03T10:13:47.691",
+      "language": "en",
+      "reach_estimate": 15000,
+      "created_at": null,
+      "like_count": 240,
+      "view_count": 5000,
+      "share_count": 70,
+      "comment_count": 30,
+      "followers_count": 8000,
+      "state": "California",
+      "country": "USA"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.posts",
+    "pk": 11,
+    "fields": {
+      "brand": 2,
+      "platform": 1,
+      "raw_text": "Delivery was a little slow, but the jeans are solid.",
+      "cleaned_text": "Delivery was a little slow, but the jeans are solid.",
+      "user_id": "user123",
+      "original_post_url": "https://twitter.com/user123/status/123456789",
+      "posted_at": "2025-06-03T10:22:44.903",
+      "language": "en",
+      "reach_estimate": 15000,
+      "created_at": null,
+      "like_count": 240,
+      "view_count": 5000,
+      "share_count": 70,
+      "comment_count": 30,
+      "followers_count": 8000,
+      "state": "California",
+      "country": "USA"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.posts",
+    "pk": 12,
+    "fields": {
+      "brand": 2,
+      "platform": 1,
+      "raw_text": "Delivery was a little slow, but the jeans are solid.",
+      "cleaned_text": "Delivery was a little slow, but the jeans are solid.",
+      "user_id": "user123",
+      "original_post_url": "https://twitter.com/user123/status/123456789",
+      "posted_at": "2025-06-03T10:33:15.142",
+      "language": "en",
+      "reach_estimate": 15000,
+      "created_at": null,
+      "like_count": 240,
+      "view_count": 5000,
+      "share_count": 70,
+      "comment_count": 30,
+      "followers_count": 8000,
+      "state": "California",
+      "country": "USA"
+    }
+  },
+  {
+    "model": "sentiment_analysis_app.sentimentresults",
+    "pk": 2,
+    "fields": {
+      "post": 12,
+      "sentiment_label": "Positive",
+      "sentiment_score": "0.9997",
+      "processed_at": "2025-06-03T10:33:15.168"
+    }
+  }
+]
